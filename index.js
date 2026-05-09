@@ -3,6 +3,8 @@
  */
 function changeHeadingText() {
   // TODO: Implement this function
+  const heading = document.getElementById("main-heading")
+  if (heading) heading.textContent = "DOM Manipulation Challenge"
 }
 
 /**
@@ -10,6 +12,8 @@ function changeHeadingText() {
  */
 function changeBoxColor() {
   // TODO: Implement this function
+  const box = document.getElementById("box-to-modify")
+  if (box) box.style.backgroundColor = "lightblue"
 }
 
 /**
@@ -17,6 +21,12 @@ function changeBoxColor() {
  */
 function addNewItem() {
   // TODO: Implement this function
+  const ul = document.getElementById("item-list")
+  if (!ul) return
+
+  const li = document.createElement("li")
+  li.textContent = "New Item"
+  ul.appendChild(li)
 }
 
 /**
@@ -24,6 +34,8 @@ function addNewItem() {
  */
 function highlightParagraph() {
   // TODO: Implement this function
+  const para = document.querySelector(".content-para")
+  if (para) para.classList.add("highlight")
 }
 
 /**
@@ -31,18 +43,18 @@ function highlightParagraph() {
  */
 function removeElement() {
   // TODO: Implement this function
+  const el = document.getElementById("to-be-removed")
+  if (el && el.parentNode) el.parentNode.removeChild(el)
 }
-
 
 // Do not edit the lines below.
 // These lines are for testing purposes.
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        changeHeadingText,
-        changeBoxColor,
-        addNewItem,
-        highlightParagraph,
-        removeElement
-    };
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = {
+    changeHeadingText,
+    changeBoxColor,
+    addNewItem,
+    highlightParagraph,
+    removeElement,
+  }
 }
-
